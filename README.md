@@ -74,3 +74,4 @@ class Dashboard extends CI_Controller
 $this->auth->logout();
 ```
 
+License
