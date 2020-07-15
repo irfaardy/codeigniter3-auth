@@ -2,7 +2,7 @@
 /**
  * Auth Library
  * @author	Irfa Ardiasnyah
- * @link	https://github.com/irfaardy/ci3-login
+ * @link	https://github.com/irfaardy/codeigniter3-auth
  * @version	1.0.0
  */
 class Auth{
@@ -46,6 +46,18 @@ class Auth{
 		} 
 
 		return false;
+	}
+
+	/**
+     * Cek hak akses.
+     *
+     * @return mixed
+     */
+	public function hakAkses($hakAksesId){
+		if($this->user()->level != $hakAksesId) {
+			$this->CI->session->set_flashdata('warning','Anda tidak dapat mengakses halaman ini.');
+			return redirect($_SERVER['HTTP_REFERER']);
+		} 
 	}
 
 	/**
