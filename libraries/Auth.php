@@ -1,9 +1,9 @@
 <?php 
 /**
- * Auth Library
+ * Codeigniter 3 Auth
  * @author	Irfa Ardiasnyah
  * @link	https://github.com/irfaardy/codeigniter3-auth
- * @version	1.1.0
+ * @version	1.2.0
  */
 class Auth{
 	
@@ -56,7 +56,7 @@ class Auth{
 	public function hakAkses($hakAksesId){
 		if($this->user()->level != $hakAksesId) {
 			$this->CI->session->set_flashdata('warning','Anda tidak dapat mengakses halaman ini.');
-			return redirect($_SERVER['HTTP_REFERER']);
+			return redirect(array_key_exists('HTTP_REFERER',$_SERVER)?$_SERVER['HTTP_REFERER']:base_url('/'));
 		} 
 	}
 
@@ -100,9 +100,23 @@ class Auth{
 	* Mencegah guest untuk mengakses halaman
 	* @return void
 	*/
-	public function protect(){
+	public function protect($hakAksesId = null){
 		if(!$this->check()){
 			$this->destroy();
+		} else{
+		   if(!empty($hakAksesId)){
+			   	 if(is_array($hakAksesId)){
+			   	 	if(!in_array($this->user()->level, $hakAksesId)) { 
+						$this->CI->session->set_flashdata('warning','Anda tidak dapat mengakses halaman ini.');
+						return redirect(array_key_exists('HTTP_REFERER',$_SERVER)?$_SERVER['HTTP_REFERER']:base_url('/'));
+					} 
+			   	 }else{
+					if($this->user()->level != $hakAksesId) {
+						$this->CI->session->set_flashdata('warning','Anda tidak dapat mengakses halaman ini.');
+						return redirect(array_key_exists('HTTP_REFERER',$_SERVER)?$_SERVER['HTTP_REFERER']:base_url('/'));
+					} 
+				}
+			}
 		}
 	}
 }

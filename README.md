@@ -37,7 +37,7 @@ if($this->auth->check()) {
 ...
 ```
 
-**Get User data**
+**Get User data Logged in User** 
 
 ```php
 ...
@@ -51,6 +51,12 @@ echo $user->name;
 
 ```php
 $this->auth->protect();
+//All logged in user can acces this controller
+$this->auth->protect([4,5]);
+//Only Level  4 or 5 can access this controller
+$this->auth->protect(3);
+//Only level 3 can access this controller
+
 ```
 
 **Example**
