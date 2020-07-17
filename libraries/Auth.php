@@ -3,7 +3,7 @@
  * Codeigniter 3 Auth
  * @author	Irfa Ardiasnyah
  * @link	https://github.com/irfaardy/codeigniter3-auth
- * @version	1.2.0
+ * @version	1.2.1
  */
 class Auth{
 	
@@ -21,6 +21,10 @@ class Auth{
      */
 	public function verify($username,$password){
 		$get = $this->CI->user->getBy(['username' => $username]);
+		if(empty($get)){
+			return false;
+		}
+		
 		if(password_verify($password, $get->password)) {
 			$user_datas = array(
 			        'user_id'  => $get->id,
