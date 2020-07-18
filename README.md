@@ -1,5 +1,7 @@
 # Codeigniter 3  Auth
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/irfaardy/codeigniter3-auth/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/irfaardy/codeigniter3-auth/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/irfaardy/codeigniter3-auth/badges/build.png?b=master)](https://scrutinizer-ci.com/g/irfaardy/codeigniter3-auth/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/irfaardy/codeigniter3-auth/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/irfaardy/codeigniter3-auth/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/irfaardy/codeigniter3-auth/badges/build.png?b=master)](https://scrutinizer-ci.com/g/irfaardy/codeigniter3-auth/build-status/master) 
+
+<a href="https://www.buymeacoffee.com/OBaAofN" target="_blank"><img width="130px" src="https://cdn.buymeacoffee.com/buttons/lato-red.png" alt="Buy Me A Coffee"  ></a>
 <h3>Simple Authentication Library for Codeigniter 3</h3>
 
 **Setup** 
