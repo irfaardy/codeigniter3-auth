@@ -9,6 +9,8 @@
 1. Copy this package to root project.
 2. Add auth library in ``config/autoload.php``.
 
+minimum php 5.5
+
 ```php
 ...
 $autoload['libraries'] = array('auth');
